@@ -1,83 +1,90 @@
-PY?=
-PELICAN?=pelican
-PELICANOPTS=
+# Makefile for https://blog.transport-data.org
+#
+# Usage:
+#   make clean                Remove the generated files
+#   make devserver            Serve and regenerate together
+#   make html                 (Re)generate the web site
+#   make pull-static [GO=1]   Retrieve static files using rsync
+#   make rsync-upload [GO=1]  Upload the web site via rsync+ssh
+#   make setup                Install Python, Pelican, and dependencies
+#
+# Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html
 
+# Use Pelican from the environment configured by uv
+PELICAN?=uv run pelican
+
+# Directories
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
-CONFFILE=$(BASEDIR)/pelicanconf.py
-PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-GITHUB_PAGES_BRANCH=gh-pages
+PELICAN_PLUGINS_DIR?=/dev/null
+PELICAN_THEMES_DIR?=/dev/null
 
+# Pelican configuration file
+CONF_FILE=$(BASEDIR)/config.py
 
+# Default options to Pelican
+PELICANOPTS=--settings=$(CONF_FILE) --output=$(OUTPUTDIR) $(INPUTDIR)
+
+# For 'pull-static' target: requires SSH credentials
+# with access to this host and directory
+PULL_SOURCE=u444606-sub1@u444606.your-storagebox.de:./www
+PULL_OPTS=-e 'ssh -p 23'
+
+# For 'rsync-upload' target: requires SSH credentials
+# with access to this host and directory
+RSYNC_TARGET=root@blog.transport-data.org:/var/www/transport-data
+
+# Options
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
-	PELICANOPTS += -D
+  PELICANOPTS +=  --debug
 endif
 
-RELATIVE ?= 0
-ifeq ($(RELATIVE), 1)
-	PELICANOPTS += --relative-urls
+RSYNC_OPTS=-cCPrvz
+
+GO =? 0
+ifneq ($(GO), 1)
+  RSYNC_OPTS += --dry-run
 endif
-
-SERVER ?= "0.0.0.0"
-
-PORT ?= 0
-ifneq ($(PORT), 0)
-	PELICANOPTS += -p $(PORT)
-endif
-
 
 help:
-	@echo 'Makefile for a pelican Web site                                           '
-	@echo '                                                                          '
-	@echo 'Usage:                                                                    '
-	@echo '   make html                           (re)generate the web site          '
-	@echo '   make clean                          remove the generated files         '
-	@echo '   make regenerate                     regenerate files upon modification '
-	@echo '   make publish                        generate using production settings '
-	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
-	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
-	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
-	@echo '   make devserver-global               regenerate and serve on 0.0.0.0    '
-	@echo '   make github                         upload the web site via gh-pages   '
-	@echo '                                                                          '
-	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
-	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
-	@echo '                                                                          '
-
-html:
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	@# Show lines of this file until the first blank line
+	@sed -Ee '/./!Q;s/^# ?(.*)/\1/' ${MAKEFILE_LIST}
+	@echo ''
 
 clean:
-	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
+	# Remove outputs
+	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 
-regenerate:
-	"$(PELICAN)" -r "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	# Remove uv virtual environment
+	rm -rf .venv uv.lock
 
-serve:
-	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
-
-serve-global:
-	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS) -b $(SERVER)
+	# Remove symlink to PELICAN_PLUGINS_DIR
+	rm -f pelican-plugins
 
 devserver:
-	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	$(PELICAN) --autoreload --listen --relative-urls $(PELICANOPTS)
 
-devserver-global:
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -b 0.0.0.0
+# html: pull-static  # Temporarily disabled
+html:
+	$(PELICAN) $(PELICANOPTS)
 
-publish:
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+pull-static:
+	rsync $(RSYNC_OPTS) --times --update --info=SKIP $(PULL_OPTS) $(PULL_SOURCE)/ .
 
-github: publish
-	ghp-import \
-	  --cname=static.transport-data.org \
-	  --push --no-history \
-	  --message="Generate Pelican site" \
-	  --branch=$(GITHUB_PAGES_BRANCH) \
-	  "$(OUTPUTDIR)"
+rsync-upload: html
+	rsync $(RSYNC_OPTS) --delete --filter=". .rsync-filter" $(OUTPUTDIR)/ $(RSYNC_TARGET)
 
+setup:
+	# Create an environment with Python and dependencies
+	uv sync
 
-.PHONY: html help clean regenerate serve serve-global devserver publish github
+	# Connect plugins
+	ln -sf $(PELICAN_PLUGINS_DIR) ./pelican-plugins
+
+	# Connect theme
+	$(PELICAN)-themes --symlink $(PELICAN_THEMES_DIR)/pelican-bootstrap3
+
+.PHONY: help clean devserver html pull-static rsync-upload setup
