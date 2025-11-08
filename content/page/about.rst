@@ -2,8 +2,7 @@ Transport Data Commons Initiative
 *********************************
 
 :date: 2023-03-04
-:save_as: index.html
-:status: hidden
+:save_as: about.html
 
 .. role:: raw-html(raw)
    :format: html
