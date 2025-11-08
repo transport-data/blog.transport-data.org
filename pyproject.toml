@@ -1,0 +1,11 @@
+
+[project]
+name = "blog-transport-data-org"
+version = "2025.10.27"
+description = "Pelican website for the TDC blog at https://blog.transport-data.org"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+  "Markdown >= 3.8",
+  "pelican >= 4.11.0",
+]
