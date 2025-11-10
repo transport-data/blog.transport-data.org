@@ -42,9 +42,13 @@ HIDE_SIDEBAR = True
 HIDE_SITENAME = True
 SITELOGO = "static/logo-text.svg"
 
+# Menu
+DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_PAGES_ON_MENU = False
 MENUITEMS = [
-    ("Discuss", "https://github.com/orgs/transport-data/discussions"),
-    ("Tools", "https://docs.transport-data.org"),
+    ("Portal", "https://portal.transport-data.org"),
+    ("Documentation", "https://docs.transport-data.org"),
+    ("Discussions", "https://github.com/orgs/transport-data/discussions"),
 ]
 
 # Necessary to squash an exception with pelican-bootstrap3
