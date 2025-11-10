@@ -25,8 +25,8 @@ PLUGIN_PATHS = [
 ]
 PLUGINS = []
 
-ARTICLE_URL = "{category}/{date:%Y-%m-%d}-{slug}"
-ARTICLE_SAVE_AS = "{category}/{date:%Y-%m-%d}-{slug}/index.html"
+ARTICLE_URL = "{date:%Y-%m}-{slug}"
+ARTICLE_SAVE_AS = "{date:%Y-%m}-{slug}/index.html"
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
 
