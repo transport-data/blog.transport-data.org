@@ -1,0 +1,41 @@
+Welcome to the TDC blog!
+************************
+
+:slug: welcome
+
+You're reading **blog.transport-data.org**,
+a new communications channel for the **Transport Data Commons (TDC)**
+and **Transport Data Commons Initiative (TDCI)**.
+
+The TDC blog will be a place for a diversity of updates
+*from* active participants in the TDCI,
+*for* the broader TDC community.
+These will include:
+
+- Spotlight on **individual records** (both old and new) available on the Commons,
+  showing the many of variety, types, formats, and sources
+  that the TDC supports and TDCI participants work on.
+- **Data visualizations** and other products
+  generated using data available through the Commons.
+- Improvements to the **TDC Portal** web interface
+  (`portal.transport-data.org <https://portal.transport-data.org>`_)
+- Updates on **new and improved tools and HOWTO guides**
+  for working with data and metadata,
+  and transforming them from ‘raw’ or original formats
+  to TDC-compliant formats based on the SDMX standards.
+- Success stories from data providers, data users, data workers,
+  and others who benefit from sharing data through the TDC
+  and improving their capabilities through community-developed processes.
+- Invitations and announcements for TDC-related **events**, open meetings,
+  seminars, training opportunities, presentations, etc.
+- **Videos** and other multimedia content on transport data topics.
+- Copies of the **TDC Monthly Recap** e-mail newsletter.
+
+The launch of the TDC blog is part of a October 2025–March 2026 project
+funded by UK Aid
+through its `Climate Compatible Growth (CCG) <https://climatecompatiblegrowth.com>`_
+Agile Research Programming Fund.
+The blog will also feature updates on contributions and support
+(both in-kind and financial) for the Commons by organizations like CCG,
+and stories about how the practices and features of the Commons allow them
+to deliver on their goals and missions.
