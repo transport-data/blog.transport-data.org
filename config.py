@@ -47,8 +47,12 @@ DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 MENUITEMS = [
     ("Portal", "https://portal.transport-data.org"),
-    ("Documentation", "https://docs.transport-data.org"),
-    ("Discussions", "https://github.com/orgs/transport-data/discussions"),
+    (
+        "Get involved",
+        "https://docs.transport-data.org/en/latest/howto/get-involved.html",
+    ),
+    ("Tools & code", "https://docs.transport-data.org"),
+    ("Discussions", "https://transport-data.zulipchat.com"),
 ]
 
 # Necessary to squash an exception with pelican-bootstrap3
