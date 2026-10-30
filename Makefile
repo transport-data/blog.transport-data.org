@@ -34,7 +34,7 @@ PULL_OPTS=-e 'ssh -p 23'
 
 # For 'rsync-upload' target: requires SSH credentials
 # with access to this host and directory
-RSYNC_TARGET=root@blog.transport-data.org:/var/www/transport-data
+RSYNC_TARGET=root@blog.transport-data.org:/var/www/blog-transport-data-org
 
 # Options
 DEBUG ?= 0
