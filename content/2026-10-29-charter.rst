@@ -1,0 +1,128 @@
+A Charter for the Transport Data Commons Initiative
+***************************************************
+
+:slug: charter
+
+As part of the `Glasgow Declaration <{filename}/2026-03-05-glasgow-declaration.rst>`_,
+participants in the February 2026 TDC Global Launch event called on:
+
+   …*all stakeholders in the Transport Data Commons* to [...]
+   *Develop* a governance structure for the TDCI
+   that is inclusive with respect to geography, language, gender, race, etc.,
+   and across categories of actors in transport data,
+   including providers, users, and supporters,
+   in order to ensure these diverse perspectives govern the future evolution of the TDC.
+
+In order to meet this call with action,
+members of the TDCI founding group have worked during the past months to develop
+a draft **Charter of the Transport Data Commons Initiative** (TDCI).
+
+Read it `here <https://docs.google.com/document/d/1iYR3i3a7QZRdWWowTcmlKwg-UMR3wF78NiBZwJuEWDQ/edit>`_
+—then read on to find out more about this document and how to help shape it.
+
+Timeline for discussion, feedback, and adoption
+===============================================
+
+February 2026
+   The Glasgow Declaration called on TDCI stakeholders
+   to develop a governance structure,
+   and sets out its key values and principles.
+
+30 October 2026
+   This first draft of the Charter is shared with the TDCI community.
+
+23–25 November 2026
+   Open question & answer (Q&A) sessions for the TDCI community to ask about
+   and discuss the governance structure laid out by the Charter,
+   and how it would operate in the short, medium, and long term.
+
+   There will be three sessions:
+
+   - Monday, 23 November at 13:00 UTC
+     (compare time `here <https://www.timeanddate.com/worldclock/fixedtime.html?continent=africa&p1=259&iso=20261123T14&msg=Transport%20Data%20Commons%20Charter%20Q%26A%20EMEA&ah=1>`__)
+     for Africa, the Middle East, and Europe
+   - Tuesday, 24 November at 07:00 UTC
+     (compare time `here <https://www.timeanddate.com/worldclock/fixedtime.html?continent=asia&p1=259&iso=20261124T08&msg=Transport%20Data%20Commons%20Charter%20Q%26A%20Asia&ah=1>`__)
+     for Asia and the Pacific.
+   - Wednesday, 25 November at 16:00 UTC
+     (compare time `here <https://www.timeanddate.com/worldclock/fixedtime.html?continent=samerica&p1=259&iso=20261125T17&msg=Transport%20Data%20Commons%20Charter%20Q%26A%20Americas&ah=1>`__)
+     for the Americas.
+
+December 2026
+   The TDCI founding contributors meet to discuss and incorporate community feedback.
+
+January 2026
+   First meeting of the **TDC Partner Forum**,
+   the most inclusive governance body described in the Charter.
+   All members of the community will gather together to formally adopt the Charter.
+
+Ways to ask questions or give feedback
+======================================
+
+Feedback is welcome by any route you find suitable.
+
+1. Join one of the Q&A sessions listed above.
+2. `Join the TDC Zulip chat <https://docs.transport-data.org/en/latest/howto/get-involved.html#chat-on-zulip>`_
+   and add to or start a discussion topic.
+3. E-mail `contact@transport-data.org <mailto:contact@transport-data.org>`_.
+4. Reach out to any existing contact from the TDCI community.
+
+Frequently asked questions (FAQs)
+=================================
+
+Why is a Charter needed?
+   In the start-up phase of the TDCI,
+   stakeholders and participants acted in an *ad-hoc* or
+   “birds of a feather” manner—brought together by shared interest
+   in the TDCI vision.
+
+   After launching in 2026,
+   the TDCI enters a new phase where *steady flows* of resources
+   (people's time and money) are needed to support *continuous and sustained* work
+   on the TDC infrastructure, tools, standards, community processes, (meta)data, etc.
+   In order to collect and use these resources responsibly and effectively,
+   the TDCI needs to *institutionalize*:
+   to become an organization with clear,
+   well-defined structure,
+   duties, responsibilities, and procedures.
+
+Why is the Charter so long/why are there so many different bodies and units?
+   The TDCI itself brings together many types of actors,
+   each of whom must do different, complementary things in order to make the TDC a success.
+
+   During the 4+-year start-up phase of TDCI (from 2022 through 2026),
+   those involved have talked to hundreds of stakeholders in transport data
+   from around the world.
+   After many hours of discussions,
+   the structure in the Charter has evolved as the best way to handle two facts:
+
+   1. Stakeholders and their organizations are extremely diverse,
+      and have diverse roles and interests; and
+   2. There are many different kinds of contributions (Appendix A1)
+      that need to come together to achieve the TDCI mission.
+   
+   The Charter must provide a description of these people and groups;
+   how they interact; and who is responsible to whom in what way.
+   So the text is written to:
+
+   - Give the simplest, clearest explanation of each of these bodies,
+     how they relate,
+     and essential TDCI activities.
+   - Be specific and unambiguous,
+     to avoid confusion or disputes about how it is interpreted.
+   - At the same time, be *general, inclusive, and permissive*,
+     avoid trying to limit the decision-making power of people
+     who will fill the roles and bodies.
+
+How is the Charter structured/organized?
+  - Sections are all numbered.
+    References to sections use the section mark: §.
+    There is no hierarchy of sections.
+  - Paragraphs and subparagraphs (“items”) are all numbered like 1.1(a)(i).
+    References to items use the paragraph mark: ¶.
+  - Key terms are underlined on first use.
+  - Abbreviations written in full on first use (“United Nations (UN)”).
+  - We avoid repeating “TDC” or “TDCI” except:
+    (a) at the start of a section or
+    (b) to avoid ambiguity.
+  - We use present simple tense (“X does Y”) unless otherwise necessary.
